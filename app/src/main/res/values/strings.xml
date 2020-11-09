@@ -2,11 +2,16 @@
     <string name="app_name">MasterSys APP</string>
     <string name="app_logo">MasterSys APP</string>
     <string name="username">Usuário</string>
+    <string name="name">Nome</string>
     <string name="password">Senha</string>
+    <string name="modality">Modalidade</string>
+    <string name="price">Preço</string>
     <string name="password_confirmation">Confirmação de Senha</string>
     <string name="sign">Entrar</string>
     <string name="dont_have_account">Não tem uma conta?</string>
     <string name="create_account">Crie uma!</string>
     <string name="user_form">Cadastro de Usuário</string>
+    <string name="plans_form">Cadastro de Planos</string>
+    <string name="modality_form">Cadastro de Modalidade</string>
     <string name="register_user">Cadastrar</string>
 </resources>
