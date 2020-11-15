@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/plans_form"
+                android:text="@string/matriculation_form"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -39,60 +39,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:startIconDrawable="@drawable/ic_baseline_account_box_24"
-                app:startIconTint="@color/white"
-                android:elevation="4dp"
                 android:textColorHint="@color/white"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/name"
-                    android:textColor="@color/white"
-                    android:background="@drawable/edit_text_background"
-                    android:padding="12dp"
-                    android:singleLine="true"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/modality"
-                android:layout_marginTop="12dp"
                 app:startIconDrawable="@drawable/ic_baseline_account_box_24"
-                app:startIconTint="@color/white"
-                android:elevation="4dp"
-                android:textColorHint="@color/white">
-
-                <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                    android:id="@+id/filled_exposed_dropdown"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:textColorHint="@color/white"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
                 app:startIconTint="@color/white"
                 android:elevation="4dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_input"
+                    android:id="@+id/cod_student"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:textColor="@color/white"
                     android:background="@drawable/edit_text_background"
                     android:padding="12dp"
-                    android:hint="@string/modality"
+                    android:hint="@string/cod_student"
                     android:inputType="textPassword"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -102,20 +63,66 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textColorHint="@color/white"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                app:startIconDrawable="@drawable/ic_baseline_date_range_24"
                 app:startIconTint="@color/white"
                 android:elevation="4dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_confirmation_input"
+                    android:id="@+id/date_matriculation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:textColor="@color/white"
                     android:background="@drawable/edit_text_background"
                     android:padding="12dp"
-                    android:hint="@string/price"
+                    android:hint="@string/date_matriculation"
+                    android:inputType="textPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/white"
+                app:startIconDrawable="@drawable/ic_baseline_date_range_24"
+                app:startIconTint="@color/white"
+                android:elevation="4dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/day_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="12dp"
+                    android:hint="@string/day_pay"
+                    android:inputType="textPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/white"
+                app:startIconDrawable="@drawable/ic_baseline_date_range_24"
+                app:startIconTint="@color/white"
+                android:elevation="4dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date_closing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="12dp"
+                    android:hint="@string/date_closing"
                     android:inputType="textPassword"/>
 
             </com.google.android.material.textfield.TextInputLayout>

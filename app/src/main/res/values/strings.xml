@@ -14,4 +14,34 @@
     <string name="plans_form">Cadastro de Planos</string>
     <string name="modality_form">Cadastro de Modalidade</string>
     <string name="register_user">Cadastrar</string>
+    <string name="student_form">Cadastro de Aluno</string>
+    <string name="student">Aluno</string>
+    <string name="date_birth">Data Nascimento</string>
+    <string name="sex">Sexo</string>
+    <string name="telephone">Telefone</string>
+    <string name="email">Email</string>
+    <string name="observation">Observação</string>
+    <string name="address">Endereço</string>
+    <string name="number">Número</string>
+    <string name="complement">Complemento</string>
+    <string name="district">Bairro</string>
+    <string name="city">Cidade</string>
+    <string name="state">Estado</string>
+    <string name="country">País</string>
+    <string name="cep">CEP</string>
+    <string name="graduation_form">Cadastro de Graduação</string>
+    <string name="graduation">Graduação</string>
+    <string name="matriculation_form">Matricular</string>
+    <string name="cod_student">Código Aluno</string>
+    <string name="date_matriculation">Data Matricula</string>
+    <string name="day_pay">Dia Vencimento</string>
+    <string name="date_closing">Data Encerramento</string>
+
+    <string name="item1_menu">Alunos</string>
+    <string name="item2_menu">Modalidade</string>
+    <string name="item3_menu">Graduação</string>
+    <string name="item4_menu">Planos</string>
+    <string name="item5_menu">Matricular</string>
+    <string name="item6_menu">Sobre</string>
+    <string name="item7_menu">Sair</string>
 </resources>

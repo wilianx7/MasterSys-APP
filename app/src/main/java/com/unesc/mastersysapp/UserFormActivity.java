@@ -64,7 +64,7 @@ public class UserFormActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<User> call, Throwable t) {
-                            Toast.makeText(UserFormActivity.this, "Erro ao criar usuário. Verifique um outro nome" + t.getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(UserFormActivity.this, "Erro ao conectar na API", Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -78,10 +78,10 @@ public class UserFormActivity extends AppCompatActivity {
      */
     private boolean checkRequiredFields(){
         if(username_input.getText().toString().isEmpty() || username_input.getText().toString().contains(" ")){
-            username_input.setError("Usuário não informado ou contem espaço");
+            username_input.setError("Usuário não informado ou contêm espaço");
             return false;
         }else if(password_input.getText().toString().isEmpty() || password_input.getText().toString().contains(" ")){
-            password_input.setError("Senha não informada ou contem espaço");
+            password_input.setError("Senha não informada ou contêm espaço");
             return false;
         }else if(!password_confirmation_input.getText().toString().equals(password_input.getText().toString())){
             password_confirmation_input.setError("As senhas não são iguais");
