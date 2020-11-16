@@ -54,7 +54,7 @@
                     android:background="@drawable/edit_text_background"
                     android:padding="12dp"
                     android:hint="@string/cod_student"
-                    android:inputType="textPassword"/>
+                    android:inputType="number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,7 +77,7 @@
                     android:background="@drawable/edit_text_background"
                     android:padding="12dp"
                     android:hint="@string/date_matriculation"
-                    android:inputType="textPassword"/>
+                    android:inputType="number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,7 +100,7 @@
                     android:background="@drawable/edit_text_background"
                     android:padding="12dp"
                     android:hint="@string/day_pay"
-                    android:inputType="textPassword"/>
+                    android:inputType="number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,7 +123,7 @@
                     android:background="@drawable/edit_text_background"
                     android:padding="12dp"
                     android:hint="@string/date_closing"
-                    android:inputType="textPassword"/>
+                    android:inputType="number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

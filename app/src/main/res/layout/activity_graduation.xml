@@ -47,9 +47,10 @@
                 android:textColorHint="@color/white">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                    android:id="@+id/filled_exposed_dropdown"
+                    android:id="@+id/modality_cbx"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:inputType="none"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -65,7 +66,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_input"
+                    android:id="@+id/graduation_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
@@ -73,7 +74,7 @@
                     android:background="@drawable/edit_text_background"
                     android:padding="12dp"
                     android:hint="@string/graduation"
-                    android:inputType="textPassword"/>
+                    android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

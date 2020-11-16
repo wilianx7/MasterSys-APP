@@ -1,6 +1,6 @@
 package com.unesc.mastersysapp.Models;
 
-public class Modality {
-    public int id;
+public class Graduation {
+    public int modality_id;
     public String name;
 }

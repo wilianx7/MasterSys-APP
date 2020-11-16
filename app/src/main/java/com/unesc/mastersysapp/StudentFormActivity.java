@@ -28,7 +28,7 @@ public class StudentFormActivity extends AppCompatActivity {
             district_input, city_input, country_input, cep_input;
     private MaterialAutoCompleteTextView sex_cbx, states_cbx;
     private String[] sex = {"Masculino", "Feminino"},
-    states = { "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA",
+    states = {"AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA",
             "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"};
     private MaterialButton register_button;
 
@@ -116,6 +116,7 @@ public class StudentFormActivity extends AppCompatActivity {
                         public void onResponse(Call<Student> call, Response<Student> response) {
                             if(response.isSuccessful()) {
                                 Toast.makeText(StudentFormActivity.this, "Aluno criado com sucesso", Toast.LENGTH_LONG).show();
+                                clearFields();
                             }else{
                                 Toast.makeText(StudentFormActivity.this, "Ocorreu um problema ao criar aluno!", Toast.LENGTH_LONG).show();
                             }
@@ -133,7 +134,6 @@ public class StudentFormActivity extends AppCompatActivity {
 
     /**
      * Verifica os campos, se estão preenchidos corretos
-     * @return
      */
     private boolean checkRequiredFields(){
         if(student_input.getText().toString().isEmpty()){
@@ -163,5 +163,26 @@ public class StudentFormActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    /**
+     * Limpa os campos preenchidos
+     */
+    private void clearFields() {
+        student_input.setText("");
+        date_birth_input.setText("");
+        sex_cbx.setListSelection(0);
+        telephone_input.setText("");
+        email_input.setText("");
+        observation_input.setText("");
+        address_input.setText("");
+        number_input.setText("");
+        complement_input.setText("");
+        district_input.setText("");
+        city_input.setText("");
+        states_cbx.setListSelection(0);
+        country_input.setText("");
+        cep_input.setText("");
+        cep_input.setText("");
     }
 }
