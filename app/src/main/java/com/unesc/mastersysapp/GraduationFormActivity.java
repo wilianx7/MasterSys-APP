@@ -134,6 +134,9 @@ public class GraduationFormActivity extends AppCompatActivity {
         return map_modalities.get(name);
     }
 
+    /**
+     * Verifica os campos, se estão preenchidos corretamente
+     */
     private boolean checkRequiredFields(){
         if(modality_cbx.getText().toString().isEmpty()){
             modality_cbx.setError("Seleciona uma modalidade!");
@@ -146,6 +149,9 @@ public class GraduationFormActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Limpa os campos preenchidos
+     */
     private void clearFields() {
         modality_cbx.setText("Modalidade"); //avaliar remover seleção da combo.
         graduation_input.setText("");

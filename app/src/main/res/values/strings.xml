@@ -12,6 +12,7 @@
     <string name="create_account">Crie uma!</string>
     <string name="user_form">Cadastro de Usuário</string>
     <string name="plans_form">Cadastro de Planos</string>
+    <string name="plans">Planos</string>
     <string name="modality_form">Cadastro de Modalidade</string>
     <string name="register_user">Cadastrar</string>
     <string name="student_form">Cadastro de Aluno</string>

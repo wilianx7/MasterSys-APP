@@ -39,7 +39,7 @@ public class StudentFormActivity extends AppCompatActivity {
 
         student_input =  findViewById(R.id.student_input);
         date_birth_input = findViewById(R.id.date_birth_input);
-        date_birth_input.addTextChangedListener(Mask.insert("##/##/#####", date_birth_input));
+        date_birth_input.addTextChangedListener(Mask.insert("##/##/####", date_birth_input));
         sex_cbx = findViewById(R.id.sex_cbx);
         ArrayAdapter<String> adapter_sex = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, sex);
         sex_cbx.setAdapter(adapter_sex);
