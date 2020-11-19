@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textview.MaterialTextView;
-import com.unesc.mastersysapp.List.UserList;
+import com.unesc.mastersysapp.ModelList.UserList;
 import com.unesc.mastersysapp.Models.User;
 import com.unesc.mastersysapp.Services.Service;
 import com.unesc.mastersysapp.Services.UserService;
@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 //Busca todos os usuarios
                 findUsers();
 

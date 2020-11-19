@@ -3,6 +3,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:textColorSecondary">@color/white</item>
+        <item name="colorPrimaryDark">@color/statusBar</item>
         /*linha responsável pela cor acima*/
     </style>
 
@@ -10,5 +11,6 @@
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
         <item name="android:textColorSecondary">@color/white</item>
+        <item name="colorPrimaryDark">@color/statusBar</item>
     </style>
 </resources>

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
-import com.unesc.mastersysapp.List.ModalityList;
+import com.unesc.mastersysapp.ModelList.ModalityList;
 import com.unesc.mastersysapp.Models.Graduation;
 import com.unesc.mastersysapp.Services.GraduationService;
 import com.unesc.mastersysapp.Services.ModalityService;
@@ -30,8 +30,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class GraduationFormActivity extends AppCompatActivity {
     private MaterialAutoCompleteTextView modality_cbx;
     private TextInputEditText graduation_input;
-    private String[] modalities;
     private MaterialButton register_button;
+
+    private String[] modalities;
     private Map<String,Integer> map_modalities = new HashMap<String, Integer>();
 
     @Override

@@ -71,21 +71,6 @@ public class StudentFormActivity extends AppCompatActivity {
                             Integer.valueOf(number_input.getText().toString()) :
                             0;
 
-                    Student student = new Student();
-                    student.name = "";
-                    student.birth_date = "";
-                    student.gender = "";
-                    student.phone = "";
-                    student.email = "";
-                    student.observation = "";
-                    student.address = "";
-                    student.cep = "";
-                    student.city = "";
-                    student.complement = "";
-                    student.district = "";
-                    student.number = "";
-                    student.state = "";
-
                     Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl(Service.BASE_URL)
                             .addConverterFactory(GsonConverterFactory.create())

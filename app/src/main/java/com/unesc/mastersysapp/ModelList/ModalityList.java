@@ -1,4 +1,4 @@
-package com.unesc.mastersysapp.List;
+package com.unesc.mastersysapp.ModelList;
 
 import com.google.gson.annotations.SerializedName;
 import com.unesc.mastersysapp.Models.Modality;

@@ -1,6 +1,6 @@
 package com.unesc.mastersysapp.Services;
 
-import com.unesc.mastersysapp.List.UserList;
+import com.unesc.mastersysapp.ModelList.UserList;
 import com.unesc.mastersysapp.Models.User;
 
 import okhttp3.RequestBody;

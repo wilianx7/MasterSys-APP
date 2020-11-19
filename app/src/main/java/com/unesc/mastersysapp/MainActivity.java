@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,18 +16,51 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.unesc.mastersysapp.ModelList.ModalityList;
+import com.unesc.mastersysapp.ModelList.PlanList;
+import com.unesc.mastersysapp.ModelList.RegistrationList;
+import com.unesc.mastersysapp.ModelList.StudentList;
+import com.unesc.mastersysapp.Models.Matriculation;
+import com.unesc.mastersysapp.Services.MatriculationService;
+import com.unesc.mastersysapp.Services.ModalityService;
+import com.unesc.mastersysapp.Services.PlanService;
+import com.unesc.mastersysapp.Services.Service;
+import com.unesc.mastersysapp.Services.StudentService;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private TextView textView;
+
+    private TextView student_value, modality_value, plan_value, registration_value, price_value;
+    ModalityList modalityList;
+    StudentList studentList;
+    PlanList planList;
+    RegistrationList registrationList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = (TextView) findViewById(R.id.txtLabel);
+        student_value = findViewById(R.id.student_value);
+        findStudent();
+        modality_value = findViewById(R.id.modality_value);
+        findModality();
+        plan_value = findViewById(R.id.plan_value);
+        findPlans();
+        registration_value = findViewById(R.id.registration_value);
+        price_value = findViewById(R.id.price_value);
+        findRegistrations();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             toolbar = (Toolbar)findViewById(R.id.toolbar);
@@ -106,5 +140,127 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .withSelectedItemByPosition(0)
                 .build();
+    }
+
+    private void findModality()  {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Service.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ModalityService modalityService = retrofit.create(ModalityService.class);
+        Call<ModalityList> request = modalityService.listModalities();
+
+
+        request.enqueue(new Callback<ModalityList>() {
+            @Override
+            public void onResponse(Call<ModalityList> call, Response<ModalityList> response) {
+                if(response.isSuccessful()) {
+                    modalityList = response.body();
+                    modality_value.setText(String.valueOf(modalityList.modalities.size()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ModalityList> call, Throwable t) {
+                Log.i("TAG", "ERRO " + t.getMessage());
+            }
+        });
+    }
+
+    private void findStudent()  {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Service.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        StudentService studentService = retrofit.create(StudentService.class);
+        Call<StudentList> request = studentService.listStudents();
+
+
+        request.enqueue(new Callback<StudentList>() {
+            @Override
+            public void onResponse(Call<StudentList> call, Response<StudentList> response) {
+                if(response.isSuccessful()) {
+                    studentList = response.body();
+                    student_value.setText(String.valueOf(studentList.students.size()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<StudentList> call, Throwable t) {
+                Log.i("TAG", "ERRO " + t.getMessage());
+            }
+        });
+    }
+
+    private void findPlans()  {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Service.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        PlanService planService = retrofit.create(PlanService.class);
+        Call<PlanList> request = planService.listPlans();
+
+
+        request.enqueue(new Callback<PlanList>() {
+            @Override
+            public void onResponse(Call<PlanList> call, Response<PlanList> response) {
+                if(response.isSuccessful()) {
+                    planList = response.body();
+                    plan_value.setText(String.valueOf(planList.plans.size()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PlanList> call, Throwable t) {
+                Log.i("TAG", "ERRO " + t.getMessage());
+            }
+        });
+    }
+
+    private void findRegistrations()  {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Service.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        MatriculationService matriculationService = retrofit.create(MatriculationService.class);
+        Call<RegistrationList> request = matriculationService.listRegistrations();
+
+
+        request.enqueue(new Callback<RegistrationList>() {
+            @Override
+            public void onResponse(Call<RegistrationList> call, Response<RegistrationList> response) {
+                float price = 0;
+                if(response.isSuccessful()) {
+                    registrationList = response.body();
+                    registration_value.setText(String.valueOf(registrationList.registrations.size()));
+
+                    Calendar c = Calendar.getInstance();
+                    Date date = new Date();
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    date = c.getTime();
+
+                    //seta primeiro dia do mês
+                    c.set(Calendar.DAY_OF_MONTH, c.getActualMinimum(Calendar.DAY_OF_MONTH));
+                    date = c.getTime();
+
+                    for(Matriculation registration : registrationList.registrations){
+                        //Verifica se termina no ultimo dia do mês
+                        if(registration.end_date.compareTo(date) >= 0){
+                            price += registration.plan.price;
+                        }
+                    }
+                    price_value.setText("R$ " + String.valueOf(price));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RegistrationList> call, Throwable t) {
+                Log.i("TAG", "ERRO " + t.getMessage());
+            }
+        });
     }
 }

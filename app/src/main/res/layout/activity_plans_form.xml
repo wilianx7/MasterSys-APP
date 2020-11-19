@@ -46,7 +46,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username_input"
+                    android:id="@+id/name_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/name"
@@ -62,15 +62,16 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/modality"
                 android:layout_marginTop="12dp"
-                app:startIconDrawable="@drawable/ic_baseline_account_box_24"
+                app:startIconDrawable="@drawable/ic_baseline_monetization_on_24_black"
                 app:startIconTint="@color/white"
                 android:elevation="4dp"
                 android:textColorHint="@color/white">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                    android:id="@+id/filled_exposed_dropdown"
+                    android:id="@+id/modality_cbx"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:inputType="none"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -79,36 +80,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textColorHint="@color/white"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                app:startIconDrawable="@drawable/ic_baseline_monetization_on_24_black"
                 app:startIconTint="@color/white"
                 android:elevation="4dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:background="@drawable/edit_text_background"
-                    android:padding="12dp"
-                    android:hint="@string/modality"
-                    android:inputType="textPassword"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:textColorHint="@color/white"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:startIconTint="@color/white"
-                android:elevation="4dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_confirmation_input"
+                    android:id="@+id/price_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
@@ -116,7 +94,7 @@
                     android:background="@drawable/edit_text_background"
                     android:padding="12dp"
                     android:hint="@string/price"
-                    android:inputType="textPassword"/>
+                    android:inputType="numberDecimal"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -1,9 +1,7 @@
 package com.unesc.mastersysapp.Services;
 
-import com.unesc.mastersysapp.List.ModalityList;
-import com.unesc.mastersysapp.List.UserList;
+import com.unesc.mastersysapp.ModelList.ModalityList;
 import com.unesc.mastersysapp.Models.Modality;
-import com.unesc.mastersysapp.Models.User;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;

@@ -11,14 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
-import com.unesc.mastersysapp.List.ModalityList;
-import com.unesc.mastersysapp.List.PlanList;
-import com.unesc.mastersysapp.Models.Graduation;
+import com.unesc.mastersysapp.ModelList.PlanList;
 import com.unesc.mastersysapp.Models.Matriculation;
-import com.unesc.mastersysapp.Models.Plan;
-import com.unesc.mastersysapp.Services.GraduationService;
 import com.unesc.mastersysapp.Services.MatriculationService;
-import com.unesc.mastersysapp.Services.ModalityService;
 import com.unesc.mastersysapp.Services.PlanService;
 import com.unesc.mastersysapp.Services.Service;
 import com.unesc.mastersysapp.util.Mask;
@@ -71,13 +66,6 @@ public class MatriculationFormActivity extends AppCompatActivity {
                     if(date_closing.getText().toString().isEmpty()) {
                         date_closing_formatted = "";
                     }
-
-                    Matriculation matriculation = new Matriculation();
-                    matriculation.student_id = 0;
-                    matriculation.plan_id = 0;
-                    matriculation.due_date = 0;
-                    matriculation.start_date = "";
-                    matriculation.end_date = "";
 
                     Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl(Service.BASE_URL)
