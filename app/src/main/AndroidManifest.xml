@@ -19,6 +19,10 @@
         <activity android:name=".StudentFormActivity" />
         <activity android:name=".GraduationFormActivity" />
         <activity android:name=".MatriculationFormActivity" />
+        <activity android:name=".PlanListActivity" />
+        <activity android:name=".StudentListActivity" />
+        <activity android:name=".RegistrationListActivity" />
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

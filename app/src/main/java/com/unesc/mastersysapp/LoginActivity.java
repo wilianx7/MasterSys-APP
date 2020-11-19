@@ -41,11 +41,15 @@ public class LoginActivity extends AppCompatActivity {
         sign_in_button = findViewById(R.id.sign_in_button);
         createAccount = findViewById(R.id.createAccount);
 
-        createAccount.setOnClickListener(new View.OnClickListener() {
+        //Busca todos os usuarios
+        findUsers();
 
+        createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, UserFormActivity.class));
+                //Busca todos os usuarios
+                findUsers();
             }
         });
 
@@ -53,10 +57,6 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                //Busca todos os usuarios
-                findUsers();
-
                 if (checkRequiredFields()) {
                     if(isUserAuthenticated(username_input.getText().toString(), password_input.getText().toString())) {
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));

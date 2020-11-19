@@ -1,6 +1,8 @@
 package com.unesc.mastersysapp.Models;
 
-public class Graduation {
+import java.io.Serializable;
+
+public class Graduation implements Serializable {
     public int id;
     public int modality_id;
     public String name;

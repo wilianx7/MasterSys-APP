@@ -1,8 +1,10 @@
 package com.unesc.mastersysapp.Models;
 
-public class Plan {
+import java.io.Serializable;
+
+public class Plan implements Serializable {
     public int id;
     public String name;
     public float price;
-    public int modality_id;
+    public Modality modality;
 }

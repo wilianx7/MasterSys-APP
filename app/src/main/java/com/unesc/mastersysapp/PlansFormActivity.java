@@ -161,7 +161,6 @@ public class PlansFormActivity extends AppCompatActivity {
      * Limpa os campos preenchidos
      */
     private void clearFields() {
-        modality_cbx.setText("Modalidade"); //avaliar remover seleção da combo.
         name_input.setText("");
         price_input.setText("");
     }

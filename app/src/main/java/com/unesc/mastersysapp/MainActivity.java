@@ -2,6 +2,7 @@ package com.unesc.mastersysapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Build;
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private TextView student_value, modality_value, plan_value, registration_value, price_value;
+    private CardView plan_card, registration_card, student_card, modality_card;
+
     ModalityList modalityList;
     StudentList studentList;
     PlanList planList;
@@ -61,6 +64,45 @@ public class MainActivity extends AppCompatActivity {
         registration_value = findViewById(R.id.registration_value);
         price_value = findViewById(R.id.price_value);
         findRegistrations();
+
+        plan_card = findViewById(R.id.plan_card);
+        registration_card = findViewById(R.id.registration_card);
+        student_card = findViewById(R.id.student_card);
+        modality_card = findViewById(R.id.modality_card);
+
+        plan_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, PlanListActivity.class);
+                it.putExtra("plans", planList);
+                startActivity(it);
+            }
+        });
+
+        registration_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, RegistrationListActivity.class);
+                it.putExtra("registrations", registrationList);
+                startActivity(it);
+            }
+        });
+
+        student_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, StudentListActivity.class);
+                it.putExtra("students", studentList);
+                startActivity(it);
+            }
+        });
+
+        modality_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(MainActivity.this, PlansFormActivity.class));
+            }
+        });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             toolbar = (Toolbar)findViewById(R.id.toolbar);
@@ -228,7 +270,6 @@ public class MainActivity extends AppCompatActivity {
 
         MatriculationService matriculationService = retrofit.create(MatriculationService.class);
         Call<RegistrationList> request = matriculationService.listRegistrations();
-
 
         request.enqueue(new Callback<RegistrationList>() {
             @Override
