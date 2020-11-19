@@ -236,6 +236,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        findRegistrations();
+        findPlans();
+        findStudent();
+        findModality();
+    }
+
     private void findPlans()  {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Service.BASE_URL)
@@ -304,4 +313,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
