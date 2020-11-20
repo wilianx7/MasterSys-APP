@@ -61,7 +61,7 @@ public class MatriculationFormActivity extends AppCompatActivity {
 
                     String data = date_closing.getText().toString();
                     String[] dd = data.split("/");
-                    String date_closing_formatted = d[2] + "-" + d[1] + "-" + d[0];
+                    String date_closing_formatted = dd[2] + "-" + dd[1] + "-" + dd[0];
 
                     if(date_closing.getText().toString().isEmpty()) {
                         date_closing_formatted = "";
